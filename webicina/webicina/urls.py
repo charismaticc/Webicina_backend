@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from EMR.views import pageNotFound
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('emr/', include('EMR.urls')),
+    path('', include('EMR.urls')),
 ]
+
+handler404 = pageNotFound
+
